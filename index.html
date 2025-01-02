@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THEJAS YOHANA Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <nav>
+        <div class="taskbar">
+            <button onclick="showPage('home')">Home</button>
+            <button onclick="showPage('about')">About</button>
+            <button onclick="showPage('skills')">Skills</button>
+            <button onclick="showPage('contact')">Contact</button>
+            <button onclick="showPage('response')">Response</button>
+        </div>
+    </nav>
+
+    <div id="home" class="page" data-aos="fade-up" data-aos-duration="1000">
+        <div class="home-container">
+            <div class="home-left">
+                <img src="thejas.png" alt="Home Image" class="home-image" />
+            </div>
+            <div class="home-right">
+                <h1 class="highlighted-name">I'm <span>THEJAS YOHANA A P</span></h1>
+                <p class="quote">"Strive not to be a success, but rather to be of value."</p>
+                <a href="cv.pdf" download class="cv-button">Download CV</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="about" class="page" data-aos="fade-up" data-aos-duration="1000">
+        <div class="about-image-container">
+            <img src="about.png" alt="About" class="full-screen-image">
+        </div>
+    </div>
+
+
+
+
+    <div id="skills" class="page" data-aos="fade-up" data-aos-duration="1000">
+        <div class="skills-image-container">
+            <img src="skills.png" alt="Skills" class="full-screen-image">
+        </div>
+    </div>
+
+
+    <div id="contact" class="page" data-aos="fade-up" data-aos-duration="1000">
+        <div class="contact-image-container">
+            <img src="contact.png" alt="Contact" class="full-screen-image">
+        </div>
+    </div>
+
+    <div class="response-container">
+        <h1>Feedback Form</h1>
+        <form id="responseForm">
+            <input type="text" id="name" placeholder="Name" required />
+            <input type="email" id="email" placeholder="Email" required />
+            <textarea id="review" placeholder="Review" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="thankYouMessage" class="thank-you" style="display:none;">
+            <h2>Thank you for your response!</h2>
+        </div>
+    </div>
+
+    <script src="tq.js"></script>
+
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.style.display = 'none'); // Hide all pages
+
+            const activePage = document.getElementById(pageId);
+            activePage.style.display = 'block'; // Show the selected page
+        }
+
+        // Default page to show
+        showPage('home');
+    </script>
+</body>
+</html>

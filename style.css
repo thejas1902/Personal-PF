@@ -1,0 +1,446 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    color: white;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 10vh;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.taskbar button {
+    background: transparent;
+    border: 2px solid #4ca1af;
+    color: white;
+    padding: 10px 15px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+    .taskbar button:hover {
+        background: #4ca1af;
+        color: #2c3e50;
+        box-shadow: 0 0 10px #4ca1af;
+    }
+
+.page {
+    display: none;
+    padding: 50px;
+    text-align: center;
+    height: 90vh;
+}
+
+/* Styling for the Home screen container */
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; /* Adjust to fill the screen */
+    padding: 20px;
+}
+
+/* Left section for the image */
+.home-left {
+    flex: 1; /* Takes up half the space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-image {
+    width: 80%; /* Adjust for better scaling */
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Right section for content */
+.home-right {
+    flex: 1; /* Takes up the other half */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding: 20px;
+}
+
+.highlighted-name {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+    .highlighted-name span {
+        color: rgb(109, 67, 0);
+        text-shadow: 0 0 10px rgb(109, 67, 0);
+        font-weight: bold;
+    }
+
+.quote {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+/* Button styling */
+.cv-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgb(109, 67, 0);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+    .cv-button:hover {
+        background: #875a0e;
+        color: #fff;
+        box-shadow: 0 0 15px rgba(109, 67, 0, 0.6);
+    }
+
+/* About Page Styling */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+}
+
+/* Left half for the image */
+.about-image {
+    width: 5%;
+    text-align: center;
+}
+
+    .about-image img {
+        width: 80%;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+/* Right half for the content */
+.about-content {
+    width: 50%;
+    color: white;
+}
+
+    .about-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-shadow: 0 0 5px #ffffff;
+    }
+
+    .about-content p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+
+    .about-content ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .about-content ul li {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+            .about-content ul li::before {
+                content: "•";
+                color: #0bda51; /* Highlight color */
+                font-weight: bold;
+                margin-right: 10px;
+                font-size: 1.5rem;
+                position: absolute;
+                left: -20px;
+                top: -2px;
+            }
+
+/* About Page Styling */
+
+/* Fullscreen image */
+#about {
+    width: 100%;
+    height: 100vh; /* Fullscreen height */
+    overflow: hidden;
+}
+
+.about-image {
+    width: 80%;
+    height: 80%;
+    object-fit: cover; /* Ensures the image covers the entire screen */
+}
+/* Skills Page Styling */
+
+#skills {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2c3e50; /* Dark gradient background */
+}
+
+.skills-image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-screen-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the image fits correctly without being cut off */
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px; /* Optional: Adds slight rounding to corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Professional shadow for depth */
+}
+/* Contact Page Styling */
+
+#contact {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2c3e50; /* Dark gradient background */
+}
+
+.contact-image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-screen-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the image fits correctly without being cut off */
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px; /* Optional: Adds slight rounding to corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Professional shadow for depth */
+}
+
+    .page h1 {
+        margin-top: 20vh;
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+
+/* Styling for the Home screen container */
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; /* Adjust to fill the screen */
+    padding: 20px;
+}
+
+/* Left section for the image */
+.home-left {
+    flex: 1; /* Takes up half the space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-image {
+    width: 80%; /* Adjust for better scaling */
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Right section for content */
+.home-right {
+    flex: 1; /* Takes up the other half */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding: 20px;
+}
+
+.highlighted-name {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: greenyellow;
+}
+
+..highlighted-name span {
+    color: #39ff14; /* Bright radium green */
+    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14, 0 0 40px #39ff14, 0 0 50px #39ff14; /* Multiple layers for a strong glow */
+    font-weight: bold;
+}
+
+    }
+
+.quote {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+/* Button styling */
+.cv-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgb(109, 67, 0);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+    .cv-button:hover {
+        background: #875a0e;
+        color: #fff;
+        box-shadow: 0 0 15px rgba(109, 67, 0, 0.6);
+    }
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+/* Response Page Styling */
+
+/* Response Page Styling */
+
+#response {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2c3e50; /* Dark background */
+}
+
+.response-content {
+    width: 90%;
+    max-width: 600px;
+    background-color: #34495e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: white;
+}
+
+    .response-content h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+.response-form input,
+.response-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+.response-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(109, 67, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .response-form button:hover {
+        background-color: #e67e22;
+    }
+
+.thank-you-message {
+    font-size: 1.5rem;
+    color: #2ecc71;
+    margin-top: 20px;
+}
+
+    form input, form textarea, form button {
+        width: 50%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    form textarea {
+        resize: none;
+        height: 100px;
+    }
+
+    form button {
+        background: #4ca1af;
+        color: white;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: all 0.3s ease-in-out;
+    }
+
+        form button:hover {
+            background: #2c3e50;
+            color: #4ca1af;
+            box-shadow: 0 0 10px #4ca1af;
+        }
+#home .content {
+    text-align: center;
+    padding: 20px;
+}
+
+.home-image {
+    width: 80%; /* Adjust the size as needed */
+    max-width: 600px; /* Set a max-width if needed */
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Optional: add a shadow for effect */
+}
